@@ -3,11 +3,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Example from './blog_example'
 
 ReactDOM.render(
   <React.StrictMode>
     <App message="Hello Message" />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>,document.getElementById('root'),
 );
+
+ReactDOM.render(
+  <Example />, document.getElementById('example')
+)
 

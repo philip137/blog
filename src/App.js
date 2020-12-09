@@ -12,24 +12,26 @@ function App(props) {
     setHello('changed ' + count + 'times. hello app js!');
     setCount(count+1)
     // props.message = "changed" Occur an error. members of prop are read only.
-    setPropsMessage("changed")
+    setPropsMessage("changedd")
 
   }
   
   return (
     <div className="App"> 
-      <div className="black-nav">
-        Blog    
-      </div>
+      <nav className="black-nav">
+        Blog
+      </nav>
       <div className="props">
         {props_message} <br/>
         {props.message}
+        <hr/>
       </div>
       <div className="state">
         {hello}<br></br>
         <button onClick={clickHandler}> click me! </button>
 
       </div>
+      
     </div>
   );
 }
