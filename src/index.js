@@ -2,9 +2,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Example from './blog_example'
-
+//import App from './App';
+//import Example from './blog_example'
+import Navbar from './components/navbar'
+/*
 ReactDOM.render(
   <React.StrictMode>
     <App message="Hello Message" />
@@ -15,3 +16,7 @@ ReactDOM.render(
   <Example />, document.getElementById('example')
 )
 
+ */
+ReactDOM.render(
+  <Navbar />, document.getElementById('root')
+)
