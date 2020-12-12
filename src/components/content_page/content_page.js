@@ -9,7 +9,7 @@ const StyledContentDiv = styled.div`
 function Content({children, ...props}) {
     
     return (
-        <StyledContentDiv className='content' {...props}>
+        <StyledContentDiv className={props.className} {...props}>
             {children}
         </StyledContentDiv>
     )

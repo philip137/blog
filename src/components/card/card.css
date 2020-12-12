@@ -1,3 +1,5 @@
-.a1 {
-    color: red;
+.card {
+    margin: 5px 5px 5px 5px;
+    padding: 8px 16px;
+    border: 1px dotted black;
 }
