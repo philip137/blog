@@ -17,7 +17,7 @@ const StyledNavMenu = styled.ul`
 const StyledNavMenuli = styled.li`
     padding: 8px 12px;
     &:hover {
-        background-color: #da9c18;
+        color: #a1a09d;
         border-radius: 4px;
     }
     @media screen and (max-width: 768px) {

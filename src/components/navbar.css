@@ -5,11 +5,9 @@ body {
 
 a {
     text-decoration: none;
-    color: #a1a09d;
-}
-a:hover {
     color: white;
 }
+
 ul {
     list-style: none;
     margin-block-start: 0rem;
@@ -24,11 +22,9 @@ ul {
 }
 
 .navbar_title {
+    margin-left: 36px;
     color: white;
     font-size: 16px;
-}
-.navbar_title a {
-    color: white;
 }
 
 .navbar_toggleButton {
@@ -36,6 +32,13 @@ ul {
     right: 32px;
     font-size: 16px;
     display: none;
+    
+}
+.navbar_toggleButton i {
+    color: white;
+}
+.navbar_toggleButton i:hover {
+    color: #a1a09d;
 }
 
 .navbar_title a {
@@ -50,9 +53,12 @@ ul {
 .navbar_icons li {
     padding: 8px 10px;
 }
+.navbar_icons a {
+    color: white;
+}
 
 .navbar_icons a:hover {
-    color: white;
+    color: #a1a09d;
 }
 
 @media screen and (max-width: 768px) {
