@@ -1,19 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
 }
-.black-nav {
-    background-color: black;
-    color: white;
-    width: 100%;
-    display: flex;
-    padding: 20px;
-    font-weight: 600;
-    font-size: 20px;
-}
 
-.list {
-    margin-top: 30px;
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
+.container {
+    display: flex;
 }

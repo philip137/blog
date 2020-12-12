@@ -46,7 +46,6 @@ function Navbar() {
     }
     
     return (
-        <>
         <div className='navbar'>
             <NavTitle/>
             <a className='navbar_toggleButton' href='#'>
@@ -57,7 +56,6 @@ function Navbar() {
             
             <NavIcons isMenuOn={isMenuOn}/>
         </div>
-        </>
     )
 }
 

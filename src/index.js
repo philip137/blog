@@ -2,9 +2,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import App from './App';
+import App from './App';
 //import Example from './blog_example'
-import Navbar from './components/navbar'
+
 /*
 ReactDOM.render(
   <React.StrictMode>
@@ -18,5 +18,5 @@ ReactDOM.render(
 
  */
 ReactDOM.render(
-  <Navbar />, document.getElementById('root')
+  <App />, document.getElementById('root')
 )
