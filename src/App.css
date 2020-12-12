@@ -5,9 +5,7 @@ body {
 .container {
     display: flex;
 }
-.sub-contents {
-    display: flex;
-}
+
 @media screen and (max-width: 768px) {
     .sub-contents {
         display: none;

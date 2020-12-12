@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import './card.css'
 
 
 
-function Card({children, ...props}) {
-
+function Card(props) {
+    console.log(props.children)
+    const a = useRef()
+    console.log(a)
     return (
         <div className={'card ' + props.name}>
-            {children}
+            {props.children}
         </div>
     )
 
