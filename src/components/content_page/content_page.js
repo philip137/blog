@@ -6,11 +6,10 @@ const StyledContentDiv = styled.div`
     flex-grow: ${(props) => props.flex_grow || 0}
 `
 
-function Content({children, ...rest}) {
-    const props = {...rest}
-    console.log(props)
+function Content({children, ...props}) {
+    
     return (
-        <StyledContentDiv className='content' {...rest}>
+        <StyledContentDiv className='content' {...props}>
             {children}
         </StyledContentDiv>
     )

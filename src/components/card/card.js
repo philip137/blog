@@ -4,12 +4,11 @@ import './card.css'
 
 
 
-function Card({children, ...rest}) {
-    const props = {...rest}
+function Card({children, ...props}) {
 
     return (
-        <div className={'card-' + props.name}>
-            
+        <div className={'card ' + props.name}>
+            {children}
         </div>
     )
 

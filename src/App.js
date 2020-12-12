@@ -13,8 +13,11 @@ function App(props) {
         <main className='main-view'>
           <div className='container'>
             <Content flex_grow={2} content={'이건?'}>
-              <Card name="1">
+              <Card name="a1">
                 asd
+              </Card>
+              <Card name="a2">
+                qwe
               </Card>
             </Content>
             <Content flex_grow={1}>
