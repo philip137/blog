@@ -5,10 +5,15 @@ body {
 
 a {
     text-decoration: none;
+    color: #a1a09d;
+}
+a:hover {
     color: white;
 }
 ul {
     list-style: none;
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
 }
 .navbar {
     display: flex;
@@ -20,13 +25,16 @@ ul {
 
 .navbar_title {
     color: white;
-    font-size: 24px;
+    font-size: 16px;
+}
+.navbar_title a {
+    color: white;
 }
 
 .navbar_toggleButton {
     position: absolute;
     right: 32px;
-    font-size: 24px;
+    font-size: 16px;
     display: none;
 }
 
@@ -43,11 +51,15 @@ ul {
     padding: 8px 10px;
 }
 
+.navbar_icons a:hover {
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-        padding: 8px 24px;
+        padding: 8px 12px;
     }
     .navbar_toggleButton {
         display: block;

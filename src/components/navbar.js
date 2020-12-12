@@ -4,8 +4,9 @@ import './navbar.css'
 
 //display: flex;
 const StyledNavMenu = styled.ul`
-    display: flex;
+    display: none;
     padding-left: 0;
+    margin: 0px;
     @media screen and (max-width: 768px) {
         width: 100%;
         display: ${(props) => props.display || 'none'};
@@ -35,6 +36,7 @@ const StyledNavIcons = styled.ul`
     }
 `
 
+
 function Navbar() {
     const [isMenuOn, setIsMenu] = useState(false);
     
@@ -62,7 +64,7 @@ function Navbar() {
 function NavTitle(props) {
     return (
         <div className='navbar_title'>
-                <i class="fas fa-blog"></i>
+                {/*} <i class="fas fa-blog"></i> {*/}
                 <a href='#'>Philip Blog</a>
         </div>
     )
@@ -83,12 +85,10 @@ function NavMenu(props) {
 function NavIcons(props) {
     return (
         <StyledNavIcons className='navbar_icons' display={props.isMenuOn ? 'flex' : 'none'}>
-                <li><a href='#'>
+                <li><a href='https://github.com/philip137/blog' target="_blank">
                 <i class="fab fa-github"></i>
                 </a></li>
-                <li><a href='#'>
-                <i class="fab fa-twitter"></i>
-                </a></li>
+                
                 <li>
                 <a href='https://roadmap.sh/frontend' target="_blank">
                 <i class="fas fa-road"></i>
