@@ -89,6 +89,12 @@ function NavIcons(props) {
                 <li><a href='#'>
                 <i class="fab fa-twitter"></i>
                 </a></li>
+                <li>
+                <a href='https://roadmap.sh/frontend' target="_blank">
+                <i class="fas fa-road"></i>
+                </a>
+                </li>
+                
         </StyledNavIcons>
     )
 }
