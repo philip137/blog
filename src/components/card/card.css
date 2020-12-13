@@ -1,5 +1,43 @@
-.card {
-    margin: 5px 5px 5px 5px;
-    padding: 8px 16px;
+.card-container {
+    margin: 5px;
+    margin-bottom: 1rem;
     border: 1px dotted black;
+    border-radius: 4px;
 }
+
+.cardform-header {
+    padding: 8px 16px;
+}
+.cardform-header h1 {
+    font-size: 1.5rem;
+    margin: 10px 5px
+}
+.cardform-header h1 a {
+    text-decoration: none;
+    color: #3490dc;
+}
+
+.cardform-header span {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    font-size: 0.8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0a2142;
+    padding-bottom: 10px;
+}
+
+.cardform-body {
+    margin: 1px 5px;
+    padding: .75rem 1.25rem;
+    word-break: break-all;
+    white-space: pre-line;
+}
+
+.cardform-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+

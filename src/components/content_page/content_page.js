@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import './content_page.css'
 
 const StyledContentDiv = styled.div`
-    flex-grow: ${(props) => props.flex_grow || 0}
+    width: ${(props) => props.vw || '0vw'}
+    
 `
 
 function Content({children, ...props}) {

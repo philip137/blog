@@ -7,9 +7,8 @@ import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 import './App.css'
 import Navbar from './components/navbar/navbar'
 import Content from './components/content_page/content_page'
-import Card from './components/card/card'
+import Card, { CardForm } from './components/card/card'
 
-import Testform from './components/testForm'
 const test_vals = [
   {
     'id': 'philip.choi',
@@ -50,20 +49,21 @@ function App(props) {
   const [testval, setTestval] = useState(test_vals)
 
   let cards = testval.map( (item, idx) => {
-    return (
-      <Card id={idx} name={item.data.title}>
-        <Testform raw={item}/>
-      </Card>
-    )
-    
+    if (item.type === 'post')
+    {
+      return (
+        <Card item={item} />
+
+      )
+    }
   })
   return (
     <div className="App"> 
       <Navbar />
 
       <main className='main-view'>
-        <div className='container'>
-          <Content className="main-contents" flex_grow={2}>
+        <div className='main-container'>
+          <Content className="contents main" vw={'70vw'}>
             {/*}
             <Card name="a1">
               Card 1
@@ -75,10 +75,8 @@ function App(props) {
           {cards}
 
           </Content>
-          <Content className="sub-contents" flex_grow={1}>
-            <Card>
-              {cards[2]}
-            </Card>
+          <Content className="contents sub" vw={'30vw'}>
+            <Card item={testval[2]}/>
           </Content>
         </div>
         
