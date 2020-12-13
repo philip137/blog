@@ -2,6 +2,9 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.main-view {
+    padding-top: 2rem;
+}
 .main-container {
     display: flex;
     margin-left: 20vw;
