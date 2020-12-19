@@ -14,6 +14,7 @@ const StyledNavMenu = styled.ul`
         align-items: center;
     }
 `
+
 const StyledNavMenuli = styled.li`
     padding: 8px 12px;
     &:hover {
@@ -35,7 +36,6 @@ const StyledNavIcons = styled.ul`
         width: 100%;
     }
 `
-
 
 function Navbar() {
     const [isMenuOn, setIsMenu] = useState(false);

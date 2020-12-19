@@ -1,13 +1,32 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useLayoutEffect } from 'react'
 import styled from 'styled-components'
 import './card.css'
 
 
 
 function Card(props) {
-    console.log({...props})
+    const targetRef = useRef()
+    const [dimensions, setDimensions] = useState({width:0, height: 0})
+    const [isCollapsed, setIsCollapsed] = useState(false)
+
+    useLayoutEffect( () => {
+        if (targetRef.current){
+            setDimensions({
+                width: targetRef.current.offsetWidth,
+                height: targetRef.current.offsetHeight
+            })
+        }
+    }, [])
+
+
+    if (props.item.data != null && props.item.data.contents)
+    {
+        console.log(dimensions.width, dimensions.height)
+    }
+    
     return (
-        <div className={'card-container'}>
+        <div className={'card-container'}
+             ref={targetRef}>
             <CardHeader data={props.item.data} />
             <CardContent data={props.item.data} />
             <CardFooter/>
