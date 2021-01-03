@@ -42,7 +42,6 @@ function Navbar() {
     
     var toggleClicked = () => {
         setIsMenu(!isMenuOn);
-
     }
     
     return (

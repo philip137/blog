@@ -1,9 +1,9 @@
 //https://react.vlpt.us/
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import styled from 'styled-components'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
-
 import './App.css'
 import Navbar from './components/navbar/navbar'
 import Content from './components/content_page/content_page'
@@ -44,9 +44,21 @@ const test_vals = [
   }
 ]
 
+const FetchContents = () => {
+  console.log("Enter")
+  const [contents, setContents] = useState([])
+  axios.defaults.baseURL = 'http://127.0.0.1:3001'
+  axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8'
+  axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*'
+  axios.get('http://127.0.0.1:3001/api/contents')
+    .then((res) => {
+      console.log(res)
+    })
+}
 
 function App(props) {
   const [testval, setTestval] = useState(test_vals)
+  // const testval = FetchContents();
 
   let cards = testval.map( (item, idx) => {
     if (item.type === 'post')
@@ -57,6 +69,13 @@ function App(props) {
       )
     }
   })
+  let sub_cards = testval.map( (item, idx) => {
+    if (item.type === 'notice') {
+      return (
+        <Card item={item} />
+      )
+    }
+  })
   return (
     <div className="App"> 
       <Navbar />
@@ -64,19 +83,10 @@ function App(props) {
       <main className='main-view'>
         <div className='main-container'>
           <Content className="contents main" vw={'70vw'}>
-            {/*}
-            <Card name="a1">
-              Card 1
-            </Card>
-            <Card name="a2">
-              Card 2
-            </Card>
-          */}
-          {cards}
-
+            {cards}
           </Content>
           <Content className="contents sub" vw={'30vw'}>
-            <Card item={testval[2]}/>
+            {sub_cards}
           </Content>
         </div>
         
