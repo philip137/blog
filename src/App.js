@@ -44,21 +44,19 @@ const test_vals = [
   }
 ]
 
-const FetchContents = () => {
-  console.log("Enter")
-  const [contents, setContents] = useState([])
-  axios.defaults.baseURL = 'http://127.0.0.1:3001'
-  axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8'
-  axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*'
-  axios.get('http://127.0.0.1:3001/api/contents')
-    .then((res) => {
-      console.log(res)
-    })
-}
+
 
 function App(props) {
-  const [testval, setTestval] = useState(test_vals)
-  // const testval = FetchContents();
+  // const [testval, setTestval] = useState(test_vals)
+  const [testval, setTestval] = useState([])
+  
+  useEffect( () => {
+    const apiCall = async () => {
+      const response = await axios.get('http://127.0.0.1:3001/api/contents')
+      setTestval(response.data)
+    }
+    apiCall()
+  }, [])
 
   let cards = testval.map( (item, idx) => {
     if (item.type === 'post')

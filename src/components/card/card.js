@@ -1,8 +1,11 @@
-import React, { useState, useRef, useLayoutEffect } from 'react'
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react'
 import styled from 'styled-components'
 import './card.css'
 
-
+const StyledCardBody = styled.div`
+    max-height: inherit;
+    overflow: ${(props) => props.overflow || 'hidden'};
+`
 
 function Card(props) {
     const targetRef = useRef()
@@ -42,12 +45,37 @@ function CardHeader(props) {
         </div>
     )
 }
+
 function CardContent(props) {
-    
+    const [overflow, SetOverflow] = useState('hidden')
+
+    const [dimensions, setDimensions] = useState({width:0, height: 0})
+    const targetRef = useRef()
+
+    useLayoutEffect( () => {
+        if (targetRef.current){
+            setDimensions({
+                width: targetRef.current.offsetWidth,
+                height: targetRef.current.offsetHeight
+            })
+            console.log(dimensions.height)
+        }
+    }, [])
+
     return (
+        <>
         <div className="cardform-body">
+            <StyledCardBody ref={targetRef} overflow={dimensions.height > 300 ? 'hidden' : 'none' }>
                 {props.data.contents}
+            </StyledCardBody>
+            <span>... more</span>
         </div>
+        
+        
+        </>
+        // <div className="cardform-body">
+        //         {props.data.contents}
+        // </div>
     )
 }
 
