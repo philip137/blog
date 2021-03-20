@@ -20,12 +20,6 @@ function Card(props) {
             })
         }
     }, [])
-
-
-    if (props.item.data != null && props.item.data.contents)
-    {
-        console.log(dimensions.width, dimensions.height)
-    }
     
     return (
         <div className={'card-container'}
@@ -47,35 +41,36 @@ function CardHeader(props) {
 }
 
 function CardContent(props) {
-    const [overflow, SetOverflow] = useState('hidden')
-
-    const [dimensions, setDimensions] = useState({width:0, height: 0})
     const targetRef = useRef()
-
+    const [overflow, SetOverflow] = useState('hidden')
+    const [dimensions, setDimensions] = useState({width:0, height: 0})
+    
     useLayoutEffect( () => {
+        //console.log(targetRef.current)
         if (targetRef.current){
             setDimensions({
                 width: targetRef.current.offsetWidth,
                 height: targetRef.current.offsetHeight
             })
-            console.log(dimensions.height)
+            console.log("dimensions : " + dimensions.height)
+            SetOverflow(dimensions.height > 300 ? 'hidden' : 'none')
         }
     }, [])
 
+    let link_more = () => {
+        let ret = (<span>... more</span>)
+        return ret
+    }
+
     return (
         <>
-        <div className="cardform-body">
-            <StyledCardBody ref={targetRef} overflow={dimensions.height > 300 ? 'hidden' : 'none' }>
+        <div className="cardform-body" ref={targetRef} >
+            <StyledCardBody overflow={overflow}>
                 {props.data.contents}
             </StyledCardBody>
-            <span>... more</span>
+            {overflow == 'hidden' ? link_more() : ''}
         </div>
-        
-        
         </>
-        // <div className="cardform-body">
-        //         {props.data.contents}
-        // </div>
     )
 }
 
